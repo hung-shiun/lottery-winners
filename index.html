@@ -518,5 +518,14 @@
 
     const matches = DATA.filter(r => r.idno.slice(0, 6) === idPrefix && nameMatches(name, r.name));
     render(matches, true);
+    reportHeight();
   });
+
+  function reportHeight() {
+    const h = Math.ceil(document.documentElement.getBoundingClientRect().height);
+    window.parent.postMessage({ type: "winners-embed-height", height: h }, "*");
+  }
+
+  window.addEventListener("load", reportHeight);
+  new ResizeObserver(reportHeight).observe(document.body);
 </script>
