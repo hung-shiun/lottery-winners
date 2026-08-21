@@ -188,11 +188,25 @@
   .idbox {
     width: 100%;
     aspect-ratio: 1 / 1;
+    min-height: 42px;
     text-align: center;
     padding: 0;
     font-size: 1.15rem;
     font-weight: 700;
     font-variant-numeric: tabular-nums;
+    color: var(--text) !important;
+    -webkit-text-fill-color: var(--text);
+    caret-color: var(--accent);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .idbox:-webkit-autofill,
+  .idbox:-webkit-autofill:hover,
+  .idbox:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--text) !important;
+    -webkit-box-shadow: 0 0 0 1000px var(--input-bg) inset !important;
+    box-shadow: 0 0 0 1000px var(--input-bg) inset !important;
+    transition: background-color 9999s ease-in-out 0s;
   }
 
   .idbox-fixed {
@@ -382,12 +396,12 @@
       <div class="field">
         <label id="idnoLabel">身分證統一編號</label>
         <div class="idno-wrap" role="group" aria-labelledby="idnoLabel">
-          <input class="idbox" data-idx="0" type="text" inputmode="latin" maxlength="1" aria-label="第 1 碼">
-          <input class="idbox" data-idx="1" type="text" inputmode="numeric" maxlength="1" aria-label="第 2 碼">
-          <input class="idbox" data-idx="2" type="text" inputmode="numeric" maxlength="1" aria-label="第 3 碼">
-          <input class="idbox" data-idx="3" type="text" inputmode="numeric" maxlength="1" aria-label="第 4 碼">
-          <input class="idbox" data-idx="4" type="text" inputmode="numeric" maxlength="1" aria-label="第 5 碼">
-          <input class="idbox" data-idx="5" type="text" inputmode="numeric" maxlength="1" aria-label="第 6 碼">
+          <input class="idbox" data-idx="0" type="text" inputmode="latin" maxlength="1" aria-label="第 1 碼" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+          <input class="idbox" data-idx="1" type="text" inputmode="numeric" maxlength="1" aria-label="第 2 碼" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+          <input class="idbox" data-idx="2" type="text" inputmode="numeric" maxlength="1" aria-label="第 3 碼" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+          <input class="idbox" data-idx="3" type="text" inputmode="numeric" maxlength="1" aria-label="第 4 碼" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+          <input class="idbox" data-idx="4" type="text" inputmode="numeric" maxlength="1" aria-label="第 5 碼" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+          <input class="idbox" data-idx="5" type="text" inputmode="numeric" maxlength="1" aria-label="第 6 碼" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
           <span class="idno-divider" aria-hidden="true"></span>
           <span class="idbox-fixed" aria-hidden="true">＊</span>
           <span class="idbox-fixed" aria-hidden="true">＊</span>
